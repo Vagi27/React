@@ -1,14 +1,30 @@
-
+.call() method
 In JavaScript, the .call() method is used to invoke a function with a specified this value and arguments provided individually.
 
 
-function greet(message) {
-  console.log(message + ' , ' + this.name);
+    function greet(message) {
+    console.log(message + ' , ' + this.name);
+    }
+
+    var person = {
+    name: 'John'
+    };
+
+    // Using .call() to invoke greet with person as 'this' and passing a message argument
+    greet.call(person, 'Hello'); // Output: Hello, John
+
+example 2:
+
+const person={
+    name:"vagish",
+    print: function(){
+        console.log(this);
+    }
+}
+const person={
+    name:"malik",
 }
 
-var person = {
-  name: 'John'
-};
-
-// Using .call() to invoke greet with person as 'this' and passing a message argument
-greet.call(person, 'Hello'); // Output: Hello, John
+console.log(person.print()); // this operator represents its parent
+console.log(person.print.call()); // when binding with nothing, this operator refers to window object, 
+console.log(person.print.call(person2)); // when binding with something, this operator refers to binded object, 
