@@ -1,0 +1,14 @@
+
+In JavaScript, the .call() method is used to invoke a function with a specified this value and arguments provided individually.
+
+
+function greet(message) {
+  console.log(message + ' , ' + this.name);
+}
+
+var person = {
+  name: 'John'
+};
+
+// Using .call() to invoke greet with person as 'this' and passing a message argument
+greet.call(person, 'Hello'); // Output: Hello, John
