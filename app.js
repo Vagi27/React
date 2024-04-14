@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 const heading1 = React.createElement("h1",
     {
         id: 'title', className: "heading1"
@@ -16,7 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // react is rendered inside the created root element of reactDOM.
 
 root.render(container);
-
+console.log(React);
 // console.log(container);
 
 
