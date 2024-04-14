@@ -1,0 +1,2 @@
+npx parcel (entry point)
+    -> execute parcel using npm and the entry point is a html file 
