@@ -1,3 +1,7 @@
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading1 = React.createElement("h1",
     {
         id: 'title', className: "heading1"
@@ -17,5 +21,26 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(container);
 
-console.log(container);
+console.log(React);
+console.log(ReactDOM);
+console.log(root.render);
+
+// console.log(container);
+
+
+// understanding this operator
+    // const person={
+    //     name:"vagish",
+    //     print: function(){
+    //         console.log(this);
+    //     }
+    // };
+
+    // const person2={
+    //     name:"malik",
+    // }
+
+    // console.log(person.print()); // this operator represents its parent
+    // console.log(person.print.call()); // when binding with nothing, this operator refers to window object, 
+    // console.log(person.print.call(person2)); // when binding with something, this operator refers to binded object, 
 
