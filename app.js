@@ -21,9 +21,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(container);
 
-console.log(React);
-console.log(ReactDOM);
-console.log(root.render);
+// console.log(React);
+// console.log(ReactDOM);
+// console.log(root.render);
 
 // console.log(container);
 
