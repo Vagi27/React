@@ -1,0 +1,6 @@
+//babel configuration file
+
+// this is the configuration needed for ommitting console.logs except console errors and warnings
+{
+    "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+}
