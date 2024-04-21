@@ -1,19 +1,24 @@
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 //react.createElement() => object => HTML code
-const heading1 = React.createElement("h1",
-    {
-        id: 'title', className: "heading1"
-
-    }, "This is h1 tag"
+const heading1 = React.createElement(
+  "h1",
+  {
+    id: "title",
+    className: "heading1",
+  },
+  "This is h1 tag"
 );
-
 
 console.log(heading1);
 
-const heading2 = (<h1>Namastey React</h1>);   //JSX
+const heading2 = (
+  <h1>
+    Namastey React
+    <h2>this is h2</h2>
+  </h1>
+); //JSX
 
 const container = React.createElement("div", {}, [heading1, heading2]);
 
