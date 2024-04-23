@@ -1,6 +1,37 @@
-#root{
-    background-color: yellow;
+#root {
+  background-color: rgb(227, 227, 227);
+  border-radius: 5px;
 }
-/* .heading1{
-    background-color: ;
-} */
+.heading1 {
+  background-color: red;
+}
+.heading2 {
+  border: 2px;
+}
+.Header {
+  justify-content: space-between;
+  height: 3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding: 0.5em 0.5em;
+}
+.headerInput {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid rgb(119, 119, 119);
+  padding-left: 1em;
+  
+
+}
+.flex {
+  display: flex;
+}
+.logo, .userIcon {
+  border-radius: 7px;
+}
+
+.headerSpan {
+  margin-top: auto;
+  margin-bottom: auto;
+  /* margin-left: auto; */
+}
