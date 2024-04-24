@@ -88,6 +88,31 @@ const Heading7 = () => (
 );
 // -----------------------------------------------------------------
 
+
+// -----------------------------------------------------------------
+  //Ways of Styling
+const Jsx = () => (
+  <div style={{backgroundColor: "red"}}>
+    <h1>home</h1>
+    <h1> about</h1>
+  </div>
+);
+
+// or , declare style seperately then put in jsx as object 
+const styleObj={
+  backgroundColor:"blue"
+  
+}
+
+const Jsx2=()=>(
+  <div style={styleObj}>
+    <h1>This is styled div </h1>
+  </div>
+
+);
+
+// -----------------------------------------------------------------
+
 // react is rendered inside the created root element of ReactDOM.
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
