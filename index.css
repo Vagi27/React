@@ -1,5 +1,5 @@
 #root {
-  background-color: rgb(227, 227, 227);
+
   border-radius: 5px;
 }
 .heading1 {
@@ -14,6 +14,8 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding: 0.5em 0.5em;
+  background-color: rgb(227, 227, 227);
+  margin-bottom: 1em;
 }
 .headerInput {
   width: 50%;
@@ -29,9 +31,29 @@
 .logo, .userIcon {
   border-radius: 7px;
 }
+.logo{
+  height: 100%;
+}
 
 .headerSpan {
   margin-top: auto;
   margin-bottom: auto;
   /* margin-left: auto; */
+}
+
+.card{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 400px;
+  padding:0.5em;
+  margin: 1rem;
+}
+
+.card> img{
+  width:100%;
+}
+.restaurantContainer{
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* justify-content: flex-start; */
 }
