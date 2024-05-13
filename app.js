@@ -29,6 +29,7 @@ const Header = () => {
   );
 };
 
+
 const restaurantList = [
   {
     info: {
@@ -301,11 +302,13 @@ const RestaurantCard = ({name,cloudinaryImageId,cuisines, avgRating}) => (
     <h2>{name}</h2>
     <h3>{cuisines.join(", ")}</h3>
     <h3>{avgRating + " stars"}</h3>
+
   </div>
 );
 
 const Body = () => (
   <div className="restaurantContainer flex ">
+
 
     {/* restaurantList.map */}
     {restaurantList.map((restaurant)=>{
@@ -315,14 +318,15 @@ const Body = () => (
 
     {/* <RestaurantCard {...restaurantList[0].info} /> */}
     {/* <RestaurantCard {...restaurantList[1].info} /> */}
+
+   
   </div>
 );
 const Footer = () => <></>;
 
 const AppLayout = () => (
-  <>
-    {" "}
-    {/* React Fragment */}
+
+  <> {/* React Fragment */}
     <Header />
     <Body />
     <Footer />
