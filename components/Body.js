@@ -4,9 +4,7 @@ import RestaurantCard from "./restaurantCard";
 import { restaurantList } from "../constants";
 
 function filterData(searchText, restaurants) {
-  if(!searchText){
-    return restaurants;
-  }
+
   const filtered = restaurants.filter((restaurant) =>
     restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
   );
