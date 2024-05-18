@@ -29,7 +29,6 @@ const Header = () => {
   );
 };
 
-
 const restaurantList = [
   {
     info: {
@@ -290,7 +289,7 @@ const restaurantList = [
 
 //manual method
 // -> after destructuring props using {} properties insides props objects can directly be used
-const RestaurantCard = ({name,cloudinaryImageId,cuisines, avgRating}) => (
+const RestaurantCard = ({ name, cloudinaryImageId, cuisines, avgRating }) => (
   // const {name,cloudinaryImageId,cuisines, avgRating}=restaurant.info;
   <div className="card">
     <img
@@ -302,31 +301,32 @@ const RestaurantCard = ({name,cloudinaryImageId,cuisines, avgRating}) => (
     <h2>{name}</h2>
     <h3>{cuisines.join(", ")}</h3>
     <h3>{avgRating + " stars"}</h3>
-
   </div>
 );
 
 const Body = () => (
   <div className="restaurantContainer flex ">
+    {/* {console.log("abc")} */}
+    {console.log( 
+      restaurantList.map((restaurant) => {
+        return <RestaurantCard {...restaurant.info} />;
+      })
+    )}
 
-
-    {/* restaurantList.map */}
-    {restaurantList.map((restaurant)=>{
-      return <RestaurantCard{...restaurant.info} /> ;
-    })
+    {restaurantList.map((restaurant) => {
+      return <RestaurantCard key ={restaurant.info.id} {...restaurant.info} />;
     }
-
+    )}
     {/* <RestaurantCard {...restaurantList[0].info} /> */}
     {/* <RestaurantCard {...restaurantList[1].info} /> */}
-
-   
+    
   </div>
 );
 const Footer = () => <></>;
 
 const AppLayout = () => (
-
-  <> {/* React Fragment */}
+  <>
+    {/* React Fragment */}
     <Header />
     <Body />
     <Footer />
