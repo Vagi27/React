@@ -1,29 +1,52 @@
+import { useState } from "react";
+
 const Title = () => {
-    return (
-      <a href="/">
-        <img
-          src={require("../images/company-logo.jpg")}
-          alt="Company logo"
-          className="logo"
-        />
-      </a>
-    );
-  };
-  
-  const Header = () => {
-    return (
-      <div className="Header flex">
-        <Title />
-  
-        <input type="text" className="headerInput" placeholder="Search.." />
-  
-        <img
-          src={require("../images/user icon.jpg")}
-          alt="user"
-          className="userIcon"
-        />
+  return (
+    <a href="/" className="flex titleAnchor">
+      <img
+        src={require("../images/company-logo.jpg")}
+        alt="Company logo"
+        className="logo"
+      />
+      <span className="anchorSpan"> Food Villa </span>
+    </a>
+  );
+};
+
+const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <div className="Header flex">
+      <Title />
+      <div className="flex Nav-items">
+        <span>Home</span>
+        <span>Catalog</span>
+        <span>About Us</span>
+
+        <button className="button-login"
+          onClick={() => {
+            setIsLoggedIn(!isLoggedIn);
+          }}
+        >
+          {isLoggedIn ? "Logout" : "Login"}
+        </button>
       </div>
-    );
-  };
-  
-  export default Header;
+      {/* <img
+        src={require("../images/user-icon.jpg")}
+        alt="user"
+        className="userIcon"
+      /> */}
+    </div>
+  );
+};
+
+export default Header;
+
+{
+  /* {isLoggedIn ? (
+          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        ) : (
+          <button onClick={() => setIsLoggedIn(true)}>Login</button>
+        )} */
+}

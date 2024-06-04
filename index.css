@@ -17,14 +17,7 @@
   background-color: rgb(227, 227, 227);
   margin-bottom: 1em;
 }
-.headerInput {
-  width: 50%;
-  border-radius: 5px;
-  border: 1px solid rgb(119, 119, 119);
-  padding-left: 1em;
-  
 
-}
 .flex {
   display: flex;
 }
@@ -44,16 +37,46 @@
 .card{
   border: 1px solid black;
   border-radius: 5px;
-  width: 400px;
+  width: 25em;
   padding:0.5em;
   margin: 1rem;
 }
 
 .card> img{
   width:100%;
+  /* width: 100%; */
+  /* height: auto; Maintain aspect ratio */
+  height:70%;
+  overflow: hidden;
+  object-fit: cover; 
+  /* object-fit: none;  */
+  
+  object-position: center;
+   /* Ensure the image covers the container, might need 'contain' based on use case */
+  /* display: block;  */
+  /* Remove any extra space at the bottom of the image */
 }
 .restaurantContainer{
   flex-wrap: wrap;
   justify-content: space-around;
   /* justify-content: flex-start; */
+}
+
+.Nav-items{
+  justify-content: space-evenly;
+  align-items: center;
+width: 20%;
+/* padding:0.5em;  */
+}
+.titleAnchor{
+  align-items: center;
+  
+}
+.anchorSpan{
+  margin-left: 0.5em;
+  font-size: larger;
+}
+.button-login{
+  min-width: 4.5em;
+  height:2em;
 }
