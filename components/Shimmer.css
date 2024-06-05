@@ -5,9 +5,7 @@
     overflow: hidden;
     margin: 1rem;
     border-radius: 5px;
-    /* padding: 0.5em; */
-    /* position: relative; */
-     /* Ensure position is set to relative to contain the absolute shimmer element */
+    
   }
   
   .shimmer-element {
@@ -21,16 +19,13 @@
       #f6f7f8 100%
     );
     background-size: 200% 100%;
-    animation: shimmer 1.5s infinite linear;
-    /* position: absolute;  */
-    /* Ensure position is absolute to move smoothly */
-    /* top: 0; */
-    /* left: 0; */
+    animation: shimmer 1s infinite linear;
+   
   }
   
   @keyframes shimmer {
     0% {
-      background-position: 200% ;
+      background-position:200% ;
     }
     100% {
       background-position: -200% ;

@@ -35,18 +35,22 @@
 }
 
 .card{
+  display: flex;
+  flex-direction: column;
+
   border: 1px solid black;
   border-radius: 5px;
   width: 25em;
   padding:0.5em;
   margin: 1rem;
+  height:auto;
 }
 
 .card> img{
   width:100%;
   /* width: 100%; */
   /* height: auto; Maintain aspect ratio */
-  height:70%;
+  height:80%;
   overflow: hidden;
   object-fit: cover; 
   /* object-fit: none;  */
