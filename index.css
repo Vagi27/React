@@ -1,5 +1,4 @@
 #root {
-
   border-radius: 5px;
 }
 .heading1 {
@@ -21,10 +20,11 @@
 .flex {
   display: flex;
 }
-.logo, .userIcon {
+.logo,
+.userIcon {
   border-radius: 7px;
 }
-.logo{
+.logo {
   height: 100%;
 }
 
@@ -34,53 +34,53 @@
   /* margin-left: auto; */
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
 
   border: 1px solid black;
   border-radius: 5px;
   width: 25em;
-  padding:0.5em;
+  padding: 0.5em;
   margin: 1rem;
-  height:auto;
+  height: auto;
 }
 
-.card> img{
-  width:100%;
+.card > img {
+  width: 100%;
   /* width: 100%; */
   /* height: auto; Maintain aspect ratio */
-  height:80%;
+  height: 80%;
   overflow: hidden;
-  object-fit: cover; 
+  object-fit: cover;
   /* object-fit: none;  */
-  
+
   object-position: center;
-   /* Ensure the image covers the container, might need 'contain' based on use case */
+  /* Ensure the image covers the container, might need 'contain' based on use case */
   /* display: block;  */
   /* Remove any extra space at the bottom of the image */
 }
-.restaurantContainer{
+.restaurantContainer {
   flex-wrap: wrap;
   justify-content: space-around;
   /* justify-content: flex-start; */
 }
 
-.Nav-items{
+.Nav-items {
   justify-content: space-evenly;
   align-items: center;
-width: 20%;
-/* padding:0.5em;  */
+  width: 20%;
+  /* padding:0.5em;  */
 }
-.titleAnchor{
+.titleAnchor {
   align-items: center;
-  
 }
-.anchorSpan{
+.anchorSpan {
   margin-left: 0.5em;
   font-size: larger;
 }
-.button-login{
+.button-login {
   min-width: 4.5em;
-  height:2em;
+  height: 2em;
 }
+
