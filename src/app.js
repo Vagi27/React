@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Catalog from "./components/Catalog";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Error from "./components/Error";
 
 // const [restaurant]=useState
 
@@ -23,6 +24,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error/>,
     children: [
       { path: "/", element: <Body /> },
       { path: "/about", element: <About /> },
