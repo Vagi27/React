@@ -41,9 +41,13 @@ const RestaurantMenu = () => {
         <h2>
           {restaurant?.data?.cards?.[2]?.card?.card?.info?.costForTwoMessage}
         </h2>
-        <div>{
-          console.log(restaurant)}
-          {restaurant?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card?.card?.itemCards?.[0]?.card?.info?.variantsV2?.variantGroups?.[1]?.variations.map(
+        <div>
+          {console.log(
+            restaurant?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR
+              ?.cards?.[1]?.card?.card?.carousel?.[0]?.dish?.info?.variantsV2
+              ?.variantGroups?.[1]?.variations
+          )}
+          {restaurant?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card?.card?.carousel?.[0]?.dish?.info?.variantsV2?.variantGroups?.[1]?.variations.map(
             (item) => {
               return <p key={item.id}>{item.name} </p>;
             }
