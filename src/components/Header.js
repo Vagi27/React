@@ -16,10 +16,10 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    console.log("useEffect");
-  }, [isLoggedIn]);
-  console.log("render");
+  // useEffect(() => {
+  //   // console.log("useEffect");
+  // }, [isLoggedIn]);
+  // // console.log("render");
 
   return (
     <div className="Header flex">
