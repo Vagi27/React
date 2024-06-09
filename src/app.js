@@ -8,6 +8,7 @@ import About from "./components/About";
 import Catalog from "./components/Catalog";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
+import Profile from "./components/ProfileClass";
 
 // const [restaurant]=useState
 
@@ -24,11 +25,18 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       { path: "/", element: <Body /> },
-      { path: "/about", element: <About /> },
-      { path: "/catalog", element: <Catalog /> },
+      {
+        path: "/about",
+        element: <About />,
+        children: [
+          { path: "profile", element: <Profile /> },
+          { path: "catalog", element: <Catalog /> },
+        ],
+      },
+      // { path: "/catalog", element: <Catalog /> },
       { path: "/Restaurant/:restaurantId", element: <RestaurantMenu /> },
     ],
   },
