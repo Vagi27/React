@@ -9,8 +9,9 @@ import Catalog from "./components/Catalog";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import Profile from "./components/ProfileClass";
+import { Suspense, lazy } from "react";
 
-// const [restaurant]=useState
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => (
   <>
@@ -38,6 +39,14 @@ const appRouter = createBrowserRouter([
       },
       // { path: "/catalog", element: <Catalog /> },
       { path: "/Restaurant/:restaurantId", element: <RestaurantMenu /> },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense>
+            <Instamart />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
