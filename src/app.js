@@ -47,6 +47,7 @@ const appRouter = createBrowserRouter([
           </Suspense>
         ),
       },
+
     ],
   },
 ]);

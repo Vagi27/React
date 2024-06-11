@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { CDN_IMG_URL } from "../constants";
+
 import useRestaurant from "./Utility/useRestaurant";
 
 const RestaurantMenu = () => {
   const { restaurantId } = useParams();
   const restaurant = useRestaurant(restaurantId);
+
+
 
   return !restaurant ? (
     <Shimmer />
@@ -30,6 +33,7 @@ const RestaurantMenu = () => {
               ?.cards?.[1]?.card?.card?.carousel?.[0]?.dish?.info?.variantsV2
               ?.variantGroups?.[1]?.variations
           )} */}
+
           {restaurant?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card?.card?.carousel?.[0]?.dish?.info?.variantsV2?.variantGroups?.[1]?.variations.map(
             (item) => {
               return <p key={item.id}>{item.name} </p>;

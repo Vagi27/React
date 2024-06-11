@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import RestaurantCard from "./restaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -37,6 +38,7 @@ const Body = () => {
   // console.log("iteration");
   // console.log(allRestaurants);
 
+
   return (
     <>
       <div className="search-container">
@@ -48,6 +50,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
+
         <button
           onClick={() => {
             const filtered = handleData(searchText, allRestaurants);
@@ -56,6 +59,7 @@ const Body = () => {
         >
           Search
         </button>
+
       </div>
       {filteredRestaurants.length === 0 ? (
         <Shimmer />
@@ -69,6 +73,7 @@ const Body = () => {
               <RestaurantCard {...restaurant?.info} />
             </Link>
           ))}
+
         </div>
       )}
     </>

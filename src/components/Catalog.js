@@ -1,3 +1,4 @@
+
 import { useOutletContext } from "react-router-dom";
 import {useParams} from "react-router-dom"
 
@@ -10,6 +11,7 @@ const Catalog = () => {
       <h2> Location: {location}</h2>
     </div>
   );
+
 };
 
 export default Catalog;

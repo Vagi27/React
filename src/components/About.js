@@ -1,3 +1,4 @@
+
 import Profile from "./ProfileClass";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -39,5 +40,6 @@ class About extends React.Component {
     );
   }
 }
+
 
 export default About;
