@@ -16,10 +16,10 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    console.log("useEffect");
-  }, [isLoggedIn]);
-  console.log("render");
+  // useEffect(() => {
+  //   // console.log("useEffect");
+  // }, [isLoggedIn]);
+  // // console.log("render");
 
   return (
     <div className="Header flex">
@@ -28,11 +28,14 @@ const Header = () => {
         <Link to="/">
           <span>Home</span>
         </Link>
-        <Link to="/catalog">
+        <Link to="/about/catalog">
           <span>Catalog</span>
         </Link>
         <Link to="/about">
           <span>About Us</span>
+        </Link>
+        <Link to="/instamart">
+          <span>Instamart</span>
         </Link>
         <button
           className="button-login"

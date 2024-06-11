@@ -40,14 +40,16 @@
 
   border: 1px solid black;
   border-radius: 5px;
-  width: 25em;
+
+  width: 24em;
+  height: 35em;
   padding: 0.5em;
   margin: 1rem;
-  height: auto;
 }
 
 .card > img {
-  width: 100%;
+  width:100%;
+
   /* width: 100%; */
   /* height: auto; Maintain aspect ratio */
   height: 80%;

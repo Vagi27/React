@@ -1,80 +1,83 @@
 import React, { useState, useEffect } from "react";
 
 import RestaurantCard from "./restaurantCard";
-import { restaurantList } from "../constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-function filterData(searchText, restaurants) {
-  const filtered = restaurants.filter((restaurant) =>
-    restaurant?.info?.name?.toLowerCase().includes(searchText?.toLowerCase())
-  );
-  return filtered;
-}
+import useAllRestaurants from "./Utility/useAllRestaurants";
+import { handleData } from "./Utility/helper";
+import { CDN_ALL_RESTAURANTS } from "../constants";
+
 const Body = () => {
+  const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [allRestaurants, setAllRestaurants] = useState([]);
 
-  const [searchText, setSearchText] = useState("");
+  // useEffect(() => {
 
+  //   const {allRestaurants} = useAllRestaurants();
+  //   setFilteredRestaurants(allRestaurants);
+  // }, []);
   useEffect(() => {
+    async function fetchData() {
+      console.log("fetch API");
+      try {
+        const data = await fetch(CDN_ALL_RESTAURANTS);
+        const info = await data.json();
+        const restaurants =
+          info?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants || [];
+        setAllRestaurants(restaurants);
+        setFilteredRestaurants(restaurants);
+      } catch (err) {
+        console.error("Error fetching data: " + err);
+      }
+    }
     fetchData();
   }, []);
 
-  async function fetchData() {
-    try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-      const info = await data.json();
-      // console.log(info?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      const restaurants =
-        info?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+  // console.log("iteration");
+  // console.log(allRestaurants);
 
-      setAllRestaurants(restaurants);
-      setFilteredRestaurants(restaurants);
-    } catch (err) {
-      console.error("Error fetching data" + err);
-      throw err;
-    }
-  }
-
-  function handleData() {
-    //each time feeding the complete list to filterData so that user gets a seamless experience
-    const filteredData = filterData(searchText, allRestaurants);
-    setFilteredRestaurants(filteredData);
-  }
 
   return (
     <>
       <div className="search-container">
         <input
           type="text"
-          placeholder="search"
+          placeholder="Search"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
-        <button onClick={handleData}> Search</button>
+
+        <button
+          onClick={() => {
+            const filtered = handleData(searchText, allRestaurants);
+            setFilteredRestaurants(filtered);
+          }}
+        >
+          Search
+        </button>
+
       </div>
       {filteredRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurantContainer flex ">
-          {filteredRestaurants.map((restaurant) => {
-            return (
-              <Link
-                to={"/restaurant/" + restaurant?.info?.id}
-                key={restaurant?.info?.id}
-              >
-                <RestaurantCard {...restaurant?.info} />
-              </Link>
-            );
-          })}
+        <div className="restaurantContainer flex">
+          {filteredRestaurants.map((restaurant) => (
+            <Link
+              to={"/restaurant/" + restaurant?.info?.id}
+              key={restaurant?.info?.id}
+            >
+              <RestaurantCard {...restaurant?.info} />
+            </Link>
+          ))}
+
         </div>
       )}
     </>
   );
 };
+
 export default Body;
