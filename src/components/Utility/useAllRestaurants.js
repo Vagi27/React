@@ -3,8 +3,10 @@ import { CDN_ALL_RESTAURANTS } from "../../constants";
 
 function useAllRestaurants() {
   const [allRestaurants, setAllRestaurants] = useState([]);
-
+  // console.log("other file");
+  
   useEffect(() => {
+    // console.log("other file's useEffect");
     fetchData();
   }, []);
 
@@ -15,6 +17,7 @@ function useAllRestaurants() {
       const restaurants =
         info?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || [];
+          // console.log(restaurants);
       setAllRestaurants(restaurants);
     } catch (err) {
       console.error("Error fetching data: " + err);
