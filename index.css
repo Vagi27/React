@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
 #root {
   border-radius: 5px;
 }
@@ -31,7 +36,7 @@
 .headerSpan {
   margin-top: auto;
   margin-bottom: auto;
-  /* margin-left: auto; */
+
 }
 
 .card {
@@ -50,29 +55,19 @@
 .card > img {
   width:100%;
 
-  /* width: 100%; */
-  /* height: auto; Maintain aspect ratio */
   height: 80%;
   overflow: hidden;
   object-fit: cover;
-  /* object-fit: none;  */
 
   object-position: center;
-  /* Ensure the image covers the container, might need 'contain' based on use case */
-  /* display: block;  */
-  /* Remove any extra space at the bottom of the image */
+
 }
-.restaurantContainer {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* justify-content: flex-start; */
-}
+
 
 .Nav-items {
   justify-content: space-evenly;
   align-items: center;
   width: 20%;
-  /* padding:0.5em;  */
 }
 .titleAnchor {
   align-items: center;
@@ -85,4 +80,4 @@
   min-width: 4.5em;
   height: 2em;
 }
-
+ */
