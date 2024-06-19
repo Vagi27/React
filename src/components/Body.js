@@ -15,7 +15,7 @@ const Body = () => {
 
   useEffect(() => {
     if (allRestaurants.length > 0) {
-      // this condition is saving 1 full render. because in cases where allrestaurants isn't fetched it is still updating local state variable, which causes render
+      // this condition is saving 1 full render. because in cases where allRestaurants isn't fetched it is still updating local state variable, which causes render
       setFilteredRestaurants(allRestaurants);
     }
   }, [allRestaurants]);
@@ -47,9 +47,9 @@ const Body = () => {
       {filteredRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurantContainer flex">
+        <div className=" flex flex-wrap justify-around">
           {filteredRestaurants.map((restaurant) => (
-            <Link
+            <Link className="border-solid border-2 m-2"
               to={"/restaurant/" + restaurant?.info?.id}
               key={restaurant?.info?.id}
             >
