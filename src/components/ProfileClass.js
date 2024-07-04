@@ -11,7 +11,7 @@ const Profile = (props) => {
 
     fetchData();
 
-    // This function will act as componentWillUnmount
+    // This return function will act as componentWillUnmount
     return () => {
       // Clean up any resources here if needed
     };
@@ -19,7 +19,7 @@ const Profile = (props) => {
 
   const context=useOutletContext();
   console.log(context);
-//   console.log(props);
+  // console.log(props);
   
   return (
     <div>

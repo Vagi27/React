@@ -11,17 +11,27 @@ import Error from "./components/Error";
 import Profile from "./components/ProfileClass";
 import { Suspense, lazy } from "react";
 import Shimmer from "./components/Shimmer";
+import userContext from "./components/Utility/userContext";
+import { useState, useContext } from "react";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
-const AppLayout = () => (
-  <>
-    {/* React Fragment */}
-    <Header />
-    <Outlet />
-    <Footer />
-  </>
-);
+const AppLayout = () => {
+  const [fetchedUser, setFetchedUser] = useState({
+    username: "Vagish",
+    email: "vagish@gmail.com",
+  });
+
+  return (
+    <>
+      <userContext.Provider value={{ info: fetchedUser,setFetchedUser:setFetchedUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </userContext.Provider>
+    </>
+  );
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -43,12 +53,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense fallback={<Shimmer/>}>
+          <Suspense fallback={<Shimmer />}>
             <Instamart />
           </Suspense>
         ),
       },
-
     ],
   },
 ]);

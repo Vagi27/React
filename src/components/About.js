@@ -1,8 +1,8 @@
-
 import Profile from "./ProfileClass";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Catalog from "./Catalog";
+import userContext from "./Utility/userContext";
 
 class About extends React.Component {
   constructor(props) {
@@ -33,13 +33,26 @@ class About extends React.Component {
     return (
       <>
         <div> this is About us: parent class</div>
-        <h1>{this.state.name}</h1>
-        <Outlet context={this.state} />
+        {/* <h1>{this.state.name}</h1> */}
+        <userContext.Consumer>
+          {(value) => {
+            {
+              console.log(value);
+            }
+            return (
+              <>
+                <span> {value.username}</span>
+                <span> {value.email}</span>
+              </>
+            );
+          }}
+        </userContext.Consumer>
+
+        {/* <Outlet context={this.state} /> */}
         {/* when using Direct Component Call, use props in child Component to access parent sent props */}
       </>
     );
   }
 }
-
 
 export default About;
