@@ -1,4 +1,5 @@
 // -> after destructuring props using {} properties insides props objects can directly be used
+
 const RestaurantCard = (props) => {
     // console.log(props)
   const { name, cloudinaryImageId, cuisines, avgRating } = props;
@@ -23,4 +24,5 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
 export default RestaurantCard;

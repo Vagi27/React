@@ -69,6 +69,7 @@ const Body = () => {
           {filteredRestaurants.map((restaurant) => (
             <Link
               className="border-solid border-2 m-2"
+
               to={"/restaurant/" + restaurant?.info?.id}
               key={restaurant?.info?.id}
             >

@@ -27,6 +27,7 @@ const Header = () => {
     <div className=" flex justify-between h-16 p-2 mb-4 bg-blue-50">
       <Title />
       <div className="flex Nav-items justify-evenly items-center w-2/5">
+
         <Link
           to="/"
           className="bg-blue-200 p-2 rounded-md hover:bg-blue-100 active:bg-blue-300"
@@ -49,6 +50,7 @@ const Header = () => {
           to="/instamart"
           className="bg-blue-200 p-2 rounded-md hover:bg-blue-100 active:bg-blue-300"
         >
+
           <span>Instamart</span>
         </Link>
         <div>
