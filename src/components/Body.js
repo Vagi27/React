@@ -14,7 +14,7 @@ const Body = () => {
 
   const allRestaurants = useAllRestaurants();
   const { info, setFetchedUser } = useContext(userContext);
-  console.log(info);
+  // console.log(info);
 
   useEffect(() => {
     if (allRestaurants.length > 0) {

@@ -24,10 +24,11 @@ const AppLayout = () => {
     email: "vagish@gmail.com",
   });
 
-
   return (
     <Provider store={store}>
-      <userContext.Provider value={{ info: fetchedUser,setFetchedUser:setFetchedUser }}>
+      <userContext.Provider
+        value={{ info: fetchedUser, setFetchedUser: setFetchedUser }}
+      >
         <Header />
         <Outlet />
         <Footer />
