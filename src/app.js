@@ -13,6 +13,8 @@ import { Suspense, lazy } from "react";
 import Shimmer from "./components/Shimmer";
 import userContext from "./components/Utility/userContext";
 import { useState, useContext } from "react";
+import store from "./store";
+import { Provider } from "react-redux";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
@@ -22,14 +24,15 @@ const AppLayout = () => {
     email: "vagish@gmail.com",
   });
 
+
   return (
-    <>
+    <Provider store={store}>
       <userContext.Provider value={{ info: fetchedUser,setFetchedUser:setFetchedUser }}>
         <Header />
         <Outlet />
         <Footer />
       </userContext.Provider>
-    </>
+    </Provider>
   );
 };
 
