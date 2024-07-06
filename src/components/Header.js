@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import userContext from "./Utility/userContext";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
+import {addItem} from "../slices/cartSlice.js";
 
 const Title = () => {
   return (
@@ -21,6 +22,12 @@ const Header = () => {
   const { info } = useContext(userContext);
 
   const cartItems=useSelector(store=>store.cart.items);
+
+  const dispatch=useDispatch();
+
+  const handleAddItem=()=>{
+    dispatch(addItem("xyz"));
+  }
 
   return (
     <div className=" flex justify-between h-16 p-2 mb-4 bg-blue-50">
@@ -56,6 +63,7 @@ const Header = () => {
         </div>
         <div>
           <h1> cart:{cartItems.length}</h1>
+          <button  onClick={()=>{handleAddItem()}}> addItem</button>
         </div>
         <button
           className="p-2 font-medium ml-6 bg-blue-200 rounded-md hover:bg-blue-100 active:bg-blue-300"
