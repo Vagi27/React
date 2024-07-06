@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import userContext from "./Utility/userContext";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -18,10 +19,8 @@ const Title = () => {
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { info } = useContext(userContext);
-  // useEffect(() => {
-  //   // console.log("useEffect");
-  // }, [isLoggedIn]);
-  // // console.log("render");
+
+  const cartItems=useSelector(store=>store.cart.items);
 
   return (
     <div className=" flex justify-between h-16 p-2 mb-4 bg-blue-50">
@@ -56,6 +55,9 @@ const Header = () => {
         <div>
           <h1> {info.username}</h1>
           <h1> {info.email}</h1>
+        </div>
+        <div>
+          <h1> cart:{cartItems.length}</h1>
         </div>
         <button
           className="p-2 font-medium ml-6 bg-blue-200 rounded-md hover:bg-blue-100 active:bg-blue-300"
